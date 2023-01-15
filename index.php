@@ -8,4 +8,4 @@ load([
 	'oweb\\stacks' => __DIR__ . '/src/Stacks.php'
 ]);
 
-Kirby::plugin('owebstudio/stacks', []);
+Kirby::plugin('owebstudio/template-stacks', []);
