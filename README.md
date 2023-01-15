@@ -38,27 +38,26 @@ If the pushed data is unique and in a repeating loop, you can send the secondary
 <?php endpush() ?>
 ````
 
-## Sample 1: snippets and templates
+## Samples
 
-### Defining stacks
-#### /site/snippets/header.php
+### Sample 1: with snippets and templates
 
+#### Defining stacks
+**/site/snippets/header.php**
 ````php
 <html>
 <body>
 ````
 
-#### /site/snippets/footer.php
-
+**/site/snippets/footer.php**
 ````php
   <?php stack('scripts') ?>
 </body>
 </html>
 ````
 
-### Pushing contents to the stack
-#### /site/templates/home.php
-
+#### Pushing contents to the stack
+**/site/templates/home.php**
 ````php
 <?php snippet('header') ?>
 
@@ -71,10 +70,10 @@ If the pushed data is unique and in a repeating loop, you can send the secondary
 <?php snippet('footer') ?>
 ````
 
-## Sample 2: with new snippets with slots feature
+### Sample 2: with new snippets with slots feature
 
-### Defining stacks
-#### /site/snippets/layouts/default.php
+#### Defining stacks
+**/site/snippets/layouts/default.php**
 
 ````php
 <html>
@@ -85,9 +84,8 @@ If the pushed data is unique and in a repeating loop, you can send the secondary
 </html>
 ````
 
-### Pushing contents to the stack
-#### /site/templates/home.php
-
+#### Pushing contents to the stack
+**/site/templates/home.php**
 ````php
 <?php snippet('layouts/default', slots: true) ?>
 
