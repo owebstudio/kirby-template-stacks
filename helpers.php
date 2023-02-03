@@ -7,9 +7,10 @@ function endpush(): void
     Stacks::end();
 }
 
-function push(string $name, bool $once = false): void
+function push(string|array $name, bool $once = false): void
 {
-    Stacks::open($name, $once);
+    is_array($name) ? Stacks::set($name) : Stacks::open($name, $once);
+
 }
 
 function stack(string $name, bool $return = false): string|null
