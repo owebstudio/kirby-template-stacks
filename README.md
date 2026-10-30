@@ -1,3 +1,5 @@
+![Template Stacks, a legacy Kirby plugin by oweb studio. Push to named stacks and render them somewhere else.](.github/cover.png)
+
 # Kirby Template Stacks
 
 > [!IMPORTANT]
