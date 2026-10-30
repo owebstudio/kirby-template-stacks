@@ -2,7 +2,7 @@
   "name": "owebstudio/kirby-template-stacks",
   "description": "Template stacks allows you to push to named stacks which can be rendered somewhere else in another snippet or template.",
   "type": "kirby-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "keywords": [
     "owebstudio",
