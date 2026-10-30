@@ -1,6 +1,23 @@
 # Kirby Template Stacks
 
+> [!IMPORTANT]
+> This plugin is in maintenance mode and only gets security fixes. It supports Kirby 3.5 to 5. Kirby 6 has its own `push()`, `endpush()` and `stack()` helpers, so you don't need this plugin anymore. Remove it before you upgrade to Kirby 6, see [Upgrading to Kirby 6](#upgrading-to-kirby-6).
+
 Template stacks allows you to push to named stacks which can be rendered somewhere else in another snippet or template. This idea is inspired from [Laravel Blade Stacks](https://laravel.com/docs/9.x/blade#stacks).
+
+## Upgrading to Kirby 6
+
+Delete the plugin folder from `site/plugins` (or run `composer remove owebstudio/kirby-template-stacks`) before you update Kirby. Your `push()`, `endpush()` and `stack()` calls then use the Kirby 6 helpers. Most templates work without changes, but check these differences:
+
+| Template Stacks | Kirby 6 |
+| --- | --- |
+| `push('scripts', true)` | `push('scripts', unique: true)` |
+| `stack('scripts', true)` | `stack('scripts', return: true)` |
+| Items are joined without a separator. | Items are joined with a line break. Use `stack('scripts', '')` to join them without one. |
+| A stack keeps its items after it is rendered. | A stack is emptied after it is rendered. Use `stack('scripts', clear: false)` to render it again. |
+| A stack in `<head>` stays empty, because the pushes in the template run after it. | Stacks can be rendered anywhere, also before the pushes, e.g. in `<head>`. |
+
+Change the `true` arguments first. In Kirby 6 the second argument of `push()` is the content and the second argument of `stack()` is the glue. So `push('scripts', true)` adds `1` to the stack and prints the content in place, and `stack('scripts', true)` prints the items joined with `1` instead of returning them.
 
 ## Installation
 
