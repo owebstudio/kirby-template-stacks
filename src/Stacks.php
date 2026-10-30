@@ -23,6 +23,17 @@ class Stacks
         return self::$stacks[$name] ?? [];
     }
 
+    public static function set(string|array $key, $value = null): array
+    {
+        if (is_array($key) === true) {
+            return static::$stacks = array_merge(static::$stacks, $key);
+        }
+
+        static::$stacks[$key] = $value;
+        return static::$stacks;
+    }
+
+
     public static function end(): void
     {
         $current = self::$current;
